@@ -7,10 +7,11 @@ wget https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh
 echo "LIST FOLDER CONTENT: `ls -ltrha`"
 mkdir /home/ubuntu/.nvm
 echo "INSTALL NVM"
-sudo ./install.sh
-# echo "CHANGE DIR"
-cd ~
+cp install.sh /home/ubuntu
+cd /home/ubuntu
 echo "PWD: `pwd`"
+./install.sh
+# echo "CHANGE DIR"
 # sudo chown ubuntu:ubuntu -R /home/ubuntu/.nvm
 export NVM_DIR="~/.nvm"
 echo "NVM DIR: $NVM_DIR"
