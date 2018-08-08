@@ -12,6 +12,8 @@ bash "install NVM" do
         wget https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh
         chmod 755 install.sh
         bash install.sh
-        source /home/ubuntu/.profile
+        export NVM_DIR="$HOME/.nvm" [ -s "$NVM_DIR/nvm.sh' ] && \. "$NVM_DIR/nvm.sh"
+        nvm ls-remote
+        nvm install node
         EOH
 end
