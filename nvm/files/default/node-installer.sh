@@ -9,6 +9,7 @@ mkdir /home/ubuntu/.nvm
 echo "INSTALL NVM"
 cp install.sh /home/ubuntu
 cd /home/ubuntu
+chown 755 install.sh
 echo "PWD: `pwd`"
 ./install.sh
 # echo "CHANGE DIR"
