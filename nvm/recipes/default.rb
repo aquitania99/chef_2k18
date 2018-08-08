@@ -3,18 +3,21 @@
 # Recipe:: default
 #
 #
-cookbook_file "/tmp/node-installer.sh" do
-    user 'ubuntu'
-    group 'ubuntu'
-    source "node-installer.sh"
-    mode 0755
-end
+# cookbook_file "/tmp/node-installer.sh" do
+#     user 'ubuntu'
+#     group 'ubuntu'
+#     source "node-installer.sh"
+#     mode 0755
+# end
 
 bash "install NVM" do
     user 'ubuntu'
     group 'ubuntu'
-    cwd '/tmp'  
+    cwd '/home/ubuntu'  
     code <<-EOH
-        ./node-installer.sh
+        wget https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh
+        chmod 755 install.sh
+        ./install.sh
+        source /home/ubuntu/.profile
         EOH
 end
