@@ -11,13 +11,14 @@
 # end
 
 bash "install NVM" do
+    cwd '/home/ubuntu'
     user 'ubuntu'
     group 'ubuntu'
-    cwd '/home/ubuntu'  
+    environment ({'HOME' => '/home/ubuntu', 'USER' => 'ubuntu'})
     code <<-EOH
         wget https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh
         chmod 755 install.sh
-        ./install.sh
+        bash install.sh
         source /home/ubuntu/.profile
         EOH
 end
