@@ -1,4 +1,4 @@
-#!/bin/bash env
+#!/bin/bash
 echo "WHO AM I!? `whoami`"
 echo "PWD: `pwd`"
 echo "GET NVM - CURL"
