@@ -17,6 +17,8 @@ bash "install NVM" do
         wget https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh
         echo "INSTALL NVM" >> log.out
         sudo chown ubuntu:ubuntu install.sh
+        mv install.sh /home/ubuntu
+        cd /home/ubuntu
         chmod 755 install.sh
         ./install.sh
         sudo chown -R ubuntu:ubuntu ~/.nvm
