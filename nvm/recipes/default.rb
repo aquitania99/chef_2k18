@@ -2,13 +2,6 @@
 # Cookbook Name:: nvm
 # Recipe:: default
 #
-#
-# cookbook_file "/tmp/node-installer.sh" do
-#     user 'ubuntu'
-#     group 'ubuntu'
-#     source "node-installer.sh"
-#     mode 0755
-# end
 
 bash "install NVM" do
     cwd '/home/ubuntu'
