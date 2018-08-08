@@ -5,7 +5,6 @@ echo "GET NVM - CURL"
 # curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
 wget https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh
 echo "LIST FOLDER CONTENT: `ls -ltrha`"
-mkdir /home/ubuntu/.nvm
 echo "INSTALL NVM"
 mv /tmp/install.sh /home/ubuntu
 cd /home/ubuntu
