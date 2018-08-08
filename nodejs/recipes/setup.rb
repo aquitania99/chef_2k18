@@ -8,6 +8,8 @@
 #
 Chef::Log.info("******* INSTALLING NODEJS *******")
 
+include_recipe "nvm"
+
 execute "nvm ls-remote" do
 	user 'ubuntu'
 	command "nvm ls-remote"
