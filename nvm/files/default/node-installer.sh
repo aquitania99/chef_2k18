@@ -10,7 +10,7 @@ mv /tmp/install.sh /home/ubuntu
 cd /home/ubuntu
 echo "PWD: `pwd`"
 echo "755 to install.sh"
-sudo chown 755 install.sh
+sudo chmod 755 install.sh
 ./install.sh
 # echo "CHANGE DIR"
 # sudo chown ubuntu:ubuntu -R /home/ubuntu/.nvm
