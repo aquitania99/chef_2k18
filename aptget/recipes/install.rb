@@ -7,5 +7,5 @@
 # All rights reserved - Do Not Redistribute
 #
 execute "apt-get install" do
-	command "apt-get install -y git acl curl wget"
+	command "apt-get install -y git acl curl wget python g++"
 end
