@@ -8,12 +8,15 @@
 #
 Chef::Log.info("******* DEPLOYING NODEJS APP *******")
 
-execute "git clone git@bitbucket.org:5andhalf/barbooks-nodejs.git" do
-	user 'ubuntu'
-	command "git clone git@bitbucket.org:5andhalf/barbooks-nodejs.git"
-end
-
-execute "git checkout development" do
-	command "cd barbooks-nodejs"
-	command "git checkout development"
+bash "git clone git@bitbucket.org:5andhalf/barbooks-nodejs.git" do
+    cwd '/home/ubuntu'
+    user 'ubuntu'
+    group 'ubuntu'
+    environment ({'HOME' => '/home/ubuntu', 'USER' => 'ubuntu'})
+    code <<-EOH
+        git clone git@bitbucket.org:5andhalf/barbooks-nodejs.git
+        cd barbooks-nodejs
+        git checkout development
+        npm install
+        EOH
 end
