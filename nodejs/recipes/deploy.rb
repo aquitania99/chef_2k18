@@ -14,9 +14,10 @@ bash "git clone git@bitbucket.org:5andhalf/barbooks-nodejs.git" do
     group 'ubuntu'
     environment ({'HOME' => '/home/ubuntu', 'USER' => 'ubuntu'})
     code <<-EOH
-        git clone git@bitbucket.org:5andhalf/barbooks-nodejs.git
-        cd barbooks-nodejs
-        git checkout development
-        npm install
-        EOH
+			echo "PWD: `pwd`"
+      git clone git@bitbucket.org:5andhalf/barbooks-nodejs.git
+      cd barbooks-nodejs
+      git checkout development
+      npm install
+      EOH
 end
