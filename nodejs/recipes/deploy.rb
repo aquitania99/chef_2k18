@@ -18,16 +18,5 @@ bash "git clone" do
       git clone git@bitbucket.org:5andhalf/barbooks-nodejs.git
       cd barbooks-nodejs
       git checkout development
-      npm install
       EOH
 end
-
-# deploy 'private_repo' do
-#   repo 'git@bitbucket.org:5andhalf/barbooks-nodejs.git'
-#   user 'ubuntu'
-#   group 'ubuntu'
-#   environment ({'HOME' => '/home/ubuntu', 'USER' => 'ubuntu'})
-#   deploy_to '/home/ubuntu/barbooks-nodejs'
-#   ssh_wrapper '/tmp/git_ssh_wrapper.sh'
-#   action :deploy
-# end
