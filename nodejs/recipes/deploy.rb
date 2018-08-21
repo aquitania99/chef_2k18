@@ -24,7 +24,10 @@ Chef::Log.info("******* DEPLOYING NODEJS APP *******")
 
 deploy 'private_repo' do
   repo 'git@bitbucket.org:5andhalf/barbooks-nodejs.git'
+	cwd '/home/ubuntu'
   user 'ubuntu'
+  group 'ubuntu'
+  environment ({'HOME' => '/home/ubuntu', 'USER' => 'ubuntu'})
   deploy_to '/home/ubuntu/barbooks-nodejs'
   ssh_wrapper '/tmp/git_ssh_wrapper.sh'
   action :deploy
